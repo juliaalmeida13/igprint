@@ -13,7 +13,7 @@ def get_config():
         # Cria um arquivo de configuração com valores padrão
         config['DEFAULT'] = {
             'chrome_path': r'C:/Program Files/Google/Chrome/Application/chrome.exe',
-            'user_data_dir': r'C:/Users/msjuh/AppData/Local/Google/Chrome/User Data'
+            'user_data_dir': r'C:/Users/<user>/AppData/Local/Google/Chrome/User Data'
         }
         with open(config_path, 'w') as configfile:
             config.write(configfile)
