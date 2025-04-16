@@ -15,11 +15,11 @@ def get_config():
     else:
         # Cria um arquivo de configuração com valores padrão
         config['DEFAULT'] = {
-            'edge_path': r'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe',
-            'user_data_dir': f'C:/Users/{user}/AppData/Local/Microsoft/Edge/User Data',
+            'path': r'C:/Program Files/Google/Chrome/Application/chrome.exe',
+            'user_data_dir': f'C:/Users/{user}/AppData/Local/Google/Chrome/User Data',
         }
         with open(config_path, 'w') as configfile:
             config.write(configfile)
 
     # Retorna os valores de configuração
-    return config['DEFAULT']['edge_path'], config['DEFAULT']['user_data_dir']
+    return config['DEFAULT']['path'], config['DEFAULT']['user_data_dir']
