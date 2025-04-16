@@ -33,7 +33,7 @@ igprint/
    pip install -e .
 Essa opção permite que você faça alterações no código e veja os resultados imediatamente, sem precisar reinstalar o pacote.
 
-## Configuração
+## ⚠ Configuração
 Na primeira execução, o pacote criará um arquivo de configuração chamado ~/.igprint_config.ini (no diretório home do usuário) com os seguintes valores padrão:
 
 ```ini  
@@ -41,7 +41,9 @@ Na primeira execução, o pacote criará um arquivo de configuração chamado ~/
 chrome_path = C:/Program Files/Google/Chrome/Application/chrome.exe
 user_data_dir = C:/Users/<user>/AppData/Local/Google/Chrome/User Data
 ```
-Você pode editar este arquivo manualmente para ajustar os caminhos do executável do Chrome e do diretório de dados do usuário.
+Você pode editar este arquivo manualmente para ajustar os caminhos do executável do Chrome e do diretório de dados do usuário ou ajustar diretamente dentro do código presente no arquivo `igprint/config.py`
+
+**ESSA CONFIGURAÇÃO É INDISPENSÁVEL OU A BIBLIOTECA NÃO FUNCIONARÁ CORRETAMENTE**
 
 ## Uso
 Após a instalação, o pacote disponibiliza um comando de terminal:
