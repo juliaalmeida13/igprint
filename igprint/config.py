@@ -16,7 +16,7 @@ def get_config():
         # Cria um arquivo de configuração com valores padrão
         config['DEFAULT'] = {
             'edge_path': r'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe',
-            'user_data_dir': f'C:/Users/{user}/AppData/Local/Microsoft/Edge/User Data',
+            'user_data_dir': f'C:/Users/{user}/AppData/Local/Microsoft/Edge/User Data/Default',
         }
         with open(config_path, 'w') as configfile:
             config.write(configfile)
