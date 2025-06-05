@@ -68,10 +68,10 @@ async def wait_for_images_to_load(page):
         });
     }''')
 
-async def capturar_instagram(url, username, chrome_exe, user_data_dir, max_scroll_attempts=10, min_images=42, scroll_pause=5):
+async def capturar_instagram(url, username, edge_path, user_data_dir, max_scroll_attempts=10, min_images=42, scroll_pause=1):
     browser = await launch(
         headless=False,
-        executablePath=chrome_exe,
+        executablePath=edge_path,
         args=[
             "--no-sandbox",
             "--disable-setuid-sandbox",
@@ -92,7 +92,7 @@ async def capturar_instagram(url, username, chrome_exe, user_data_dir, max_scrol
         return
 
     console.print("[bold blue]Esperando página carregar inicialmente...[/bold blue]")
-    await asyncio.sleep(5)
+    await asyncio.sleep(1)
 
     console.print(f"[bold blue]Iniciando rolagem para carregar ao mínimo {min_images} imagens...[/bold blue]")
     

@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='igprint',
-    version='0.1.0',
+    version='0.1.1',
     description='Captura screenshots do feed do Instagram via browser automatizado.',
     author='Júlia Almeida',
     author_email='julia.almeida13k@gmail.com',
