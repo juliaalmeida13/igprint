@@ -3,7 +3,7 @@ import asyncio
 from .core import capturar_instagram
 from rich.console import Console
 from .core import RichArgParser
-from .config import get_config  # supondo que você coloque o get_config em um módulo, por exemplo, config.py
+from .config import get_config  # Lê o config ajustado com USERPROFILE
 
 console = Console()
 
@@ -28,8 +28,7 @@ def main():
         default='kaarpage',
         help="Nome do usuário do Instagram (ex.: kaarpage)."
     )
-    
-    # Argumentos opcionais para sobrescrever as configurações se desejado.
+
     parser.add_argument(
         '--chrome-path',
         type=str,
@@ -42,17 +41,22 @@ def main():
         default=None,
         help="(Opcional) Caminho para o diretório de dados do usuário do Chrome (perfil que já possui o Instagram autenticado)."
     )
+
     args = parser.parse_args()
-    
-    # Recupera as configurações do arquivo de configuração
+
+    # Carrega as configurações padrão do config.ini
     default_chrome_path, default_user_data_dir = get_config()
 
-    # Se o usuário passar os argumentos via linha de comando, eles sobrescrevem os defaults
+    # Prioriza argumentos de linha de comando, se fornecidos
     chrome_path = args.chrome_path if args.chrome_path is not None else default_chrome_path
     user_data_dir = args.user_data_dir if args.user_data_dir is not None else default_user_data_dir
 
     target_url = f"https://www.instagram.com/{args.profile}"
-    asyncio.get_event_loop().run_until_complete(capturar_instagram(target_url, args.profile, chrome_path, user_data_dir))
+
+    # Usa asyncio.run() para Python 3.7+
+    asyncio.run(
+        capturar_instagram(target_url, args.profile, chrome_path, user_data_dir)
+    )
 
 if __name__ == '__main__':
     main()
