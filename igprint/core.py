@@ -69,6 +69,7 @@ async def wait_for_images_to_load(page):
     }''')
 
 async def capturar_instagram(url, username, edge_path, user_data_dir, max_scroll_attempts=10, min_images=42, scroll_pause=1):
+  
     browser = await launch(
         headless=False,
         executablePath=edge_path,
