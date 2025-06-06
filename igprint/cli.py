@@ -52,7 +52,7 @@ def main():
     edge_path = args.edge_path if args.edge_path is not None else default_edge_path
     user_data_dir = args.user_data_dir if args.user_data_dir is not None else default_user_data_dir
 
-    target_url = f"https://www.instagram.com/{args.profile}"
+    target_url = f"https://www.instagram.com/{args.profile}/reels/"
     asyncio.get_event_loop().run_until_complete(capturar_instagram(target_url, args.profile, edge_path, user_data_dir))
 
 
