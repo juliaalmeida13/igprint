@@ -27,6 +27,13 @@ igprint/
 
 1. Clone este repositório ou faça o download do pacote.
 
+## precisa criar um ambiente e tbm acessar o ambiente e tbm instalar o numpy
+
+python -m venv .igp 
+.\.igp\Scripts\activate
+pip install numpy
+
+
 2. Navegue até a raiz do projeto (onde se encontra o `setup.py`) e instale-o em modo _editable_:
 
    ```bash
